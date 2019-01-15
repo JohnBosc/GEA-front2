@@ -1,0 +1,300 @@
+<style type="text/css">
+	a.nav-link{
+    text-align: center!important;
+		vertical-align: middle!important;
+	}
+	a.active{
+		background: #065A8F!important;
+	}
+	i.widget-icon{
+		vertical-align: middle!important;
+	}
+  input, select {
+    border: 1px solid grey!important;
+    border-radius:0!important;
+  }
+</style>
+<ng-sidebar-container class="app" [ngClass]="{'mode-boxed': isBoxed, 'sidebar-opened': isOpened, 'theme-light': theme == 'light', 'theme-dark': theme == 'dark', 'mode-push': _mode == 'push', 'mode-dock': _mode == 'dock', 'mode-over': _mode == 'over', 'mode-slide': _mode == 'slide', 'no-footer': options?.removeFooter, 'map-header': options?.mapHeader}">
+  <ng-sidebar
+    [(opened)]="isOpened"
+    [(mode)]="_mode"
+    [position]="'left'"
+    [dockedSize]="'80px'"
+    [autoCollapseWidth]="'991'"
+    [closeOnClickOutside]="isOver()"
+    [showBackdrop]="isOver()"
+    [sidebarClass]="'sidebar-panel'" #sidebar>
+    <nav class="navbar custom-navbar main-brand" style="background: #267CB5!important; text-align: center!important;">
+      <p class="navbar-brand mr-auto">
+        <span class="docked-hidden" style="cursor: default; font-weight: lighter; color: #ffffff;">&nbsp;MINPOSTEL</span>
+      </p>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="javascript:;" class="nav-link" (click)="toogleSidebar()">
+            <i class="hamburger-icon v2" *ngIf="_mode === 'over' && !isOver()">
+              <span></span>
+            </i>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <!-- main navigation -->
+    <nav class="menu bg-white">
+      <ul class="navigation" appAccordion>
+        <li class="navigation-item" style="text-align: center; margin-top: 30px; background: url('assets/images/ico.png'); height: 200px; width: 240px; background-repeat: no-repeat; background-size: contain;"></li>
+        <li class="navigation-item">
+          <div class="container-fluid">
+				<div class="form-group">
+					<p style="padding: 10px; background: #267CB5; color: #FFFFFF;">Rechercher...</p>
+
+					<p><select class="form-control" id="">
+				      <option>DOCUMENTS ORGANISATIONNELS</option>
+				      <option>ACTES DE CARRIERE</option>
+				      <option>CORRESPONDANCE</option>
+				      <option>RESSOURCES FINANCIERES</option>
+				      <option>AUTRES</option>
+            </select>
+          </p>
+
+				    <!--DOCUMENTS ORGANISATIONNELS-->
+				  <p><select class="form-control" id="" style="display: none!important;">
+				      <option>Organigramme</option>
+				      <option>Rapport des travaux des services centraux, déconcentrés et structures sous tutelle</option>
+				      <option>Procès-verbaux des conseils d'administration des sociétés sous tutelle</option>
+				      <option>Directives ministérielles(Décrets Arrêtés circulaires, notes, décisions)</option>
+				      <option>Délégation de pouvoirs de signature</option>
+				      <option>Bilan présenté par le DG lors de la présentation des voeux</option>
+				      <option>Discours du Ministre lors des évènements</option>
+				      <option>Compte rendu des réunions</option>
+				      <option>Actes(nomination/affectation)</option>
+            </select>
+          </p>
+
+				    <!--CATEGORIE ACTES DE CARRIERE-->
+				  <p><select class="form-control" id="" style="display: none!important;">
+				      <option>Recrutement</option>
+				      <option>Grade, échelons, reclassement</option>
+				      <option>Congés(administratif, annuel, biennal, maternité)</option>
+				      <option>Certificats/ et attestations/attestations d'emploi/attestation cessation de service/attestation de mise en retraite/certificat de travail/attestation d'ancienneté(présence effective, reprise service, prise de service)</option>
+				      <option>Stages(autorisation de mise en stage, rapport de stage)</option>
+          </select></p>
+
+				    <!--CATEGORIE CORREESPONDANCE-->
+				  <p><select class="form-control" id="" style="display: none!important;">
+				      <option>Correspondances(arrivée/départ)</option>
+				      <option>Notes</option>
+            </select>
+          </p>
+
+				    <!--CATEGORIE RESSOURCES FINANCIERES-->
+          <p><select class="form-control" id="" style="display: none!important;">
+				      <option>Documents comptables(bilan, audits, rapports, des controles budgetaires, compte d'exploitation, livre d'inventaire, bon de commande, lettre commande, marché, Délégation de pouvoirs de signature, Dossier d'appel d'offre, Agrément/convention, Approvisionnement et transfert de ligne)</option>
+				      <option>Documents fiscaux(impot, tva)<option>
+				      <option>Investissemnt(Acquisition, cession, participation)</option>
+				      <option>Contrats commerciaux(contrat d'assurance, contrat de fournisseur)</option>
+				      <option>Fiche récapitulative des mandats transmis</option>
+				      <option>Documents comptables budget annexe(frais de déplacement, frais médicaux, entretien des biens mobiliers et immobiliers, Ventes et disposition des biens mobiliers et immobiliers, Contrats de baux, Construction batiment, Construction de lignes téléphoniques)</option>
+          </select></p>
+
+				    <!--CATEGORIE AUTRES-->
+        <p><select class="form-control" id="" style="display: none!important;">
+				      <option>Devis et plan</option>
+				      <option>bordereau de transmission</option>
+            </select>
+        </p>
+          <p><input class="form-control" type="date" placeholder="Date d'ajout"></p>
+          <p><input class="form-control" type="number" placeholder="Nombre de pages"></p>
+          <p><input class="form-control" type="text" placeholder="Signataire"></p>
+				</div>
+	        </div>
+        </li>
+      </ul>
+    </nav>
+    <!-- /main navigation -->
+  </ng-sidebar>
+
+  <div ng-sidebar-content class="app-inner">
+
+    <!--navigation menu on top-->
+    <nav class="navbar custom-navbar main-header" style="background: #267CB5;">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a href="javascript:;" class="nav-link" (click)="toogleSidebar()">
+            <i class="hamburger-icon v2">
+              <span></span>
+            </i>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav" style="text-align: center;">
+        <li class="nav-item">
+          <a class="nav-link text-white active" href="#">
+            <i class="widget-icon icon icon-basic-home"></i> Accueil
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">
+            <i class="widget-icon icon icon-basic-user"></i> Utilisateurs
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">
+            <i class="widget-icon icon icon-basic-sheet-txt"></i> Documents
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">
+            <i class="widget-icon icon icon-arrows-switch-horizontal"></i> Mouvements
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">
+            <i class="widget-icon icon icon-basic-server2"></i> Stockage
+          </a>
+        </li>
+        <li class="nav-item">
+          <span class="nav-divider" style="background:#ffffff;"></span>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" href="#">
+            <i class="widget-icon icon icon-basic-mail"></i>
+          </a>
+        </li>
+        <!--nav-bar user connected-->
+        <li class="nav-item" ngbDropdown placement="bottom-right">
+          <a href="javascript:;" class="nav-link" ngbDropdownToggle>
+            <img src="assets/images/avatar.jpg" class="navbar-avatar rounded-circle" alt="user" title="user">
+          </a>
+          <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
+            <a class="dropdown-item" href="javascript:;">
+              <i class="icon icon-basic-settings mr-3"></i>
+              <span>Settings</span>
+            </a>
+            <a class="dropdown-item" href="javascript:;">
+              <i class="icon icon-basic-postcard mr-3"></i>
+              <span>Profile</span>
+            </a>
+            <a class="dropdown-item" href="javascript:;">
+              <i class="icon icon-basic-message-multiple mr-3"></i>
+              <span>Notifications</span>
+            </a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="javascript:;">
+              <i class="icon icon-arrows-switch-vertical mr-3"></i>
+              <span>Signout</span>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </nav><!--End navigation menu-->
+
+    <!--Footer-->
+    <div class="main-content">
+      <router-outlet></router-outlet>
+      <nav class="navbar custom-navbar navbar-light main-footer small">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:;">
+              <span>Copyright &copy; 2019</span> <span class="ff-headers text-uppercase">Mengue</span>. All rights reserved
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav hidden-xs-down" style="display: none;">
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:;">Made with love on Earth</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+</ng-sidebar-container>
+
+<ng-template #search let-c="close" let-d="dismiss">
+  <form class="search__form" action="">
+    <input class="search-input" name="search" type="search" placeholder="Search..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus="true" />
+    <p class="text-muted"><small><strong>Hit enter to search or ESC to close</strong></small></p>
+  </form>
+  <div class="search-suggestions">
+    <h6 class="text-uppercase"><strong>Suggestions?</strong></h6>
+    <p class="text-primary">#medical #analytics #fitness #transport #ui #dashboard #admin #bootstrap #angular #typescript</p>
+  </div>
+  <button type="button" class="search-close" aria-label="Close search form" (click)="d('Cross click')">
+    <i class="fi flaticon-close"></i>
+  </button>
+</ng-template>
+
+
+<div class="configuration hidden-sm-down" [ngClass]="{'active': showSettings}">
+  <div class="configuration-cog" (click)="showSettings = !showSettings">
+    <i class="icon icon-basic-mixer2"></i>
+  </div>
+  <div class="card">
+    <div class="card-header">
+      Template Options
+    </div>
+    <div class="card-body">
+      <small class="ff-headers text-uppercase mb-3"><strong>Explore Sidebar API</strong></small>
+      <div class="custom-controls-stacked mb-2">
+        <label class="custom-control custom-checkbox">
+          <input class="custom-control-input" name="radio-stacked" type="radio" value="push" [(ngModel)]="_mode" (change)="isOpened = true; mode = _mode">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Push mode</span>
+        </label>
+        <label class="custom-control custom-checkbox">
+          <input class="custom-control-input" name="radio-stacked" type="radio" value="dock" [(ngModel)]="_mode" (change)="isOpened = true; mode = _mode">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Docked mode</span>
+        </label>
+        <label class="custom-control custom-checkbox">
+          <input class="custom-control-input" name="radio-stacked" type="radio" value="over" [(ngModel)]="_mode" (change)="isOpened = true; mode = _mode">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Over content mode</span>
+        </label>
+        <label class="custom-control custom-checkbox">
+          <input class="custom-control-input" name="radio-stacked" type="radio" value="slide" [(ngModel)]="_mode" (change)="isOpened = true; mode = _mode">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Slide mode</span>
+        </label>
+      </div>
+
+      <small class="ff-headers text-uppercase mb-3"><strong>Select A Layout</strong></small>
+      <div class="d-flex align-items-center">
+        <label class="custom-control custom-checkbox mb-2">
+          <input type="checkbox" class="custom-control-input" [(ngModel)]="isBoxed">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Boxed</span>
+        </label>
+      </div>
+      <div class="d-flex align-items-center mb-2">
+        <label class="custom-control custom-checkbox mb-2">
+          <input type="checkbox" class="custom-control-input" [ngModel]="options?.removeFooter" (ngModelChange)="options.removeFooter=$event">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Remove footer</span>
+        </label>
+      </div>
+
+      <small class="ff-headers text-uppercase mb-3"><strong>Select A Theme</strong></small>
+      <div class="custom-controls-stacked mb-2">
+        <label class="custom-control custom-checkbox">
+          <input class="custom-control-input" name="radio-stacked" type="radio" value="light" [(ngModel)]="theme">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Light theme</span>
+        </label>
+        <label class="custom-control custom-checkbox">
+          <input class="custom-control-input" name="radio-stacked" type="radio" value="dark" [(ngModel)]="theme">
+          <span class="custom-control-indicator"></span>
+          <span class="custom-control-description">Dark theme</span>
+        </label>
+      </div>
+
+      <small class="ff-headers text-uppercase mb-3"><strong>Select A Language</strong></small>
+      <div class="d-flex align-items-center">
+        <select class="custom-select" [(ngModel)]="currentLang" #langSelect="ngModel" (ngModelChange)="translate.use(currentLang)" placeholder="Select language" style="min-width: 50%;">
+          <option *ngFor="let lang of translate.getLangs()" [value]="lang">{{ lang }}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

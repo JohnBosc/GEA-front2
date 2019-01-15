@@ -1,0 +1,20 @@
+<div class="bg-white d-flex align-items-stretch min-height-100 h-100">
+  <div class="d-none d-md-inline-flex col-md-4 col-lg-4"></div>
+  <div class="card card-body mb-0 rounded-0 p-5 col-sm-12 col-md-4 col-lg-4">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="mb-3" style="text-align: center">
+        <img src="assets/images/ico.png" class="avatar-lg mb-1" alt="">
+        <p class="ff-headers text-uppercase">Recuperation du mot de passe</p>
+      </div>
+      <fieldset class="form-group" [ngClass]="{'has-danger': form.controls['uname'].hasError('required') && form.controls['uname'].touched}">
+        <label for="username" class="form-control-label" style="font-weight: bold; color:#707070;">
+          Email
+        </label>
+        <input type="email" class="form-control" placeholder="" [formControl]="form.controls['uname']" [ngClass]="{'form-control-danger': form.controls['uname'].hasError('required') && form.controls['uname'].touched}"/>
+        <div class="form-control-feedback" *ngIf="form.controls['uname'].hasError('required') && form.controls['uname'].touched" style="color:red;"><i>Adresse email requise</i></div>
+      </fieldset>
+      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Envoyer mot de passe</button>
+    </form>
+  </div>
+  <div class="d-none d-md-inline-flex col-md-4 col-lg-4"></div>
+</div>

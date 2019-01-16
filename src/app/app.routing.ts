@@ -8,7 +8,7 @@ export const AppRoutes: Routes = [{
   children: [{
     path: '',
     loadChildren: './authentication/authentication.module#AuthenticationModule'
-  }, {
+  },{
     path: 'error',
     loadChildren: './error/error.module#ErrorModule'
   }]
@@ -18,11 +18,14 @@ export const AppRoutes: Routes = [{
   children: [{
     path: 'dashboard',
     loadChildren: './dashboard/dashboard.module#DashboardModule'
+  },{
+    path: 'signup',
+    loadChildren: './signup/signup.module#SignupModule'
   }, {
     path: 'icons',
     loadChildren: './icons/icons.module#IconsModule'
-  }, {
-    path: 'docs',
+  },{
+     path: 'docs',
     loadChildren: './docs/docs.module#DocsModule'
   }]
 }, {

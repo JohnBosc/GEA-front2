@@ -21,7 +21,7 @@ export class SignupComponent implements OnInit {
       uname: [null , Validators.compose ( [ Validators.required ] )],
       password: password,
       confirmPassword: confirmPassword
-    } );
+    });
   }
 
   onSubmit() {

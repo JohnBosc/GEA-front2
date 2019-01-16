@@ -14,6 +14,7 @@
         <div class="form-control-feedback" *ngIf="form.controls['uname'].hasError('required') && form.controls['uname'].touched" style="color:red;"><i>Adresse email requise</i></div>
       </fieldset>
       <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Envoyer mot de passe</button>
+      <a [routerLink]="['']" class="form-text"><small>(Retour page de connexion)</small></a>
     </form>
   </div>
   <div class="d-none d-md-inline-flex col-md-4 col-lg-4"></div>

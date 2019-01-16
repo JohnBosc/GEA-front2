@@ -13,6 +13,7 @@
     border: 1px solid grey!important;
     border-radius:0!important;
   }
+
 </style>
 <ng-sidebar-container class="app" [ngClass]="{'mode-boxed': isBoxed, 'sidebar-opened': isOpened, 'theme-light': theme == 'light', 'theme-dark': theme == 'dark', 'mode-push': _mode == 'push', 'mode-dock': _mode == 'dock', 'mode-over': _mode == 'over', 'mode-slide': _mode == 'slide', 'no-footer': options?.removeFooter, 'map-header': options?.mapHeader}">
   <ng-sidebar
@@ -47,7 +48,7 @@
 				<div class="form-group">
 					<p style="padding: 10px; background: #267CB5; color: #FFFFFF;">Rechercher...</p>
 
-					<p><select class="form-control" id="">
+					<p><select class="form-control form-control-sm" id="">
 				      <option>DOCUMENTS ORGANISATIONNELS</option>
 				      <option>ACTES DE CARRIERE</option>
 				      <option>CORRESPONDANCE</option>
@@ -57,7 +58,7 @@
           </p>
 
 				    <!--DOCUMENTS ORGANISATIONNELS-->
-				  <p><select class="form-control" id="" style="display: none!important;">
+				  <p><select class="form-control form-control-sm" id="" style="display: none!important;">
 				      <option>Organigramme</option>
 				      <option>Rapport des travaux des services centraux, déconcentrés et structures sous tutelle</option>
 				      <option>Procès-verbaux des conseils d'administration des sociétés sous tutelle</option>
@@ -71,7 +72,7 @@
           </p>
 
 				    <!--CATEGORIE ACTES DE CARRIERE-->
-				  <p><select class="form-control" id="" style="display: none!important;">
+				  <p><select class="form-control form-control-sm" id="" style="display: none!important;">
 				      <option>Recrutement</option>
 				      <option>Grade, échelons, reclassement</option>
 				      <option>Congés(administratif, annuel, biennal, maternité)</option>
@@ -80,14 +81,14 @@
           </select></p>
 
 				    <!--CATEGORIE CORREESPONDANCE-->
-				  <p><select class="form-control" id="" style="display: none!important;">
+				  <p><select class="form-control form-control-sm" id="" style="display: none!important;">
 				      <option>Correspondances(arrivée/départ)</option>
 				      <option>Notes</option>
             </select>
           </p>
 
 				    <!--CATEGORIE RESSOURCES FINANCIERES-->
-          <p><select class="form-control" id="" style="display: none!important;">
+          <p><select class="form-control form-control-sm" id="" style="display: none!important;">
 				      <option>Documents comptables(bilan, audits, rapports, des controles budgetaires, compte d'exploitation, livre d'inventaire, bon de commande, lettre commande, marché, Délégation de pouvoirs de signature, Dossier d'appel d'offre, Agrément/convention, Approvisionnement et transfert de ligne)</option>
 				      <option>Documents fiscaux(impot, tva)<option>
 				      <option>Investissemnt(Acquisition, cession, participation)</option>
@@ -97,18 +98,30 @@
           </select></p>
 
 				    <!--CATEGORIE AUTRES-->
-        <p><select class="form-control" id="" style="display: none!important;">
+        <p><select class="form-control form-control-sm" id="" style="display: none!important;">
 				      <option>Devis et plan</option>
 				      <option>bordereau de transmission</option>
             </select>
         </p>
-          <p><input class="form-control" type="date" placeholder="Date d'ajout"></p>
-          <p><input class="form-control" type="number" placeholder="Nombre de pages"></p>
-          <p><input class="form-control" type="text" placeholder="Signataire"></p>
+          <p><input class="form-control form-control-sm" type="date" placeholder="Date d'ajout"></p>
+          <p><input class="form-control form-control-sm" type="number" placeholder="Nombre de pages"></p>
+          <p><input class="form-control form-control-sm" type="text" placeholder="Signataire"></p>
 				</div>
 	        </div>
         </li>
       </ul>
+
+      <!--Minpostel credit-->
+      <nav class="navbar custom-navbar navbar-light main-footer small">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="http://www.minpostel.gov.cm">
+                    <span class="ff-headers text-uppercase">MINPOSTEL - </span> Tous les droits reservés
+            </a>
+          </li>
+        </ul>
+      </nav>
+
     </nav>
     <!-- /main navigation -->
   </ng-sidebar>
@@ -196,7 +209,7 @@
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
             <a class="nav-link" href="javascript:;">
-              <span>Copyright &copy; 2019</span> <span class="ff-headers text-uppercase">Mengue</span>. All rights reserved
+              <span>Design By Jean Bosco Mengue</span>
             </a>
           </li>
         </ul>
@@ -210,91 +223,3 @@
   </div>
 
 </ng-sidebar-container>
-
-<ng-template #search let-c="close" let-d="dismiss">
-  <form class="search__form" action="">
-    <input class="search-input" name="search" type="search" placeholder="Search..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus="true" />
-    <p class="text-muted"><small><strong>Hit enter to search or ESC to close</strong></small></p>
-  </form>
-  <div class="search-suggestions">
-    <h6 class="text-uppercase"><strong>Suggestions?</strong></h6>
-    <p class="text-primary">#medical #analytics #fitness #transport #ui #dashboard #admin #bootstrap #angular #typescript</p>
-  </div>
-  <button type="button" class="search-close" aria-label="Close search form" (click)="d('Cross click')">
-    <i class="fi flaticon-close"></i>
-  </button>
-</ng-template>
-
-
-<div class="configuration hidden-sm-down" [ngClass]="{'active': showSettings}">
-  <div class="configuration-cog" (click)="showSettings = !showSettings">
-    <i class="icon icon-basic-mixer2"></i>
-  </div>
-  <div class="card">
-    <div class="card-header">
-      Template Options
-    </div>
-    <div class="card-body">
-      <small class="ff-headers text-uppercase mb-3"><strong>Explore Sidebar API</strong></small>
-      <div class="custom-controls-stacked mb-2">
-        <label class="custom-control custom-checkbox">
-          <input class="custom-control-input" name="radio-stacked" type="radio" value="push" [(ngModel)]="_mode" (change)="isOpened = true; mode = _mode">
-          <span class="custom-control-indicator"></span>
-          <span class="custom-control-description">Push mode</span>
-        </label>
-        <label class="custom-control custom-checkbox">
-          <input class="custom-control-input" name="radio-stacked" type="radio" value="dock" [(ngModel)]="_mode" (change)="isOpened = true; mode = _mode">
-          <span class="custom-control-indicator"></span>
-          <span class="custom-control-description">Docked mode</span>
-        </label>
-        <label class="custom-control custom-checkbox">
-          <input class="custom-control-input" name="radio-stacked" type="radio" value="over" [(ngModel)]="_mode" (change)="isOpened = true; mode = _mode">
-          <span class="custom-control-indicator"></span>
-          <span class="custom-control-description">Over content mode</span>
-        </label>
-        <label class="custom-control custom-checkbox">
-          <input class="custom-control-input" name="radio-stacked" type="radio" value="slide" [(ngModel)]="_mode" (change)="isOpened = true; mode = _mode">
-          <span class="custom-control-indicator"></span>
-          <span class="custom-control-description">Slide mode</span>
-        </label>
-      </div>
-
-      <small class="ff-headers text-uppercase mb-3"><strong>Select A Layout</strong></small>
-      <div class="d-flex align-items-center">
-        <label class="custom-control custom-checkbox mb-2">
-          <input type="checkbox" class="custom-control-input" [(ngModel)]="isBoxed">
-          <span class="custom-control-indicator"></span>
-          <span class="custom-control-description">Boxed</span>
-        </label>
-      </div>
-      <div class="d-flex align-items-center mb-2">
-        <label class="custom-control custom-checkbox mb-2">
-          <input type="checkbox" class="custom-control-input" [ngModel]="options?.removeFooter" (ngModelChange)="options.removeFooter=$event">
-          <span class="custom-control-indicator"></span>
-          <span class="custom-control-description">Remove footer</span>
-        </label>
-      </div>
-
-      <small class="ff-headers text-uppercase mb-3"><strong>Select A Theme</strong></small>
-      <div class="custom-controls-stacked mb-2">
-        <label class="custom-control custom-checkbox">
-          <input class="custom-control-input" name="radio-stacked" type="radio" value="light" [(ngModel)]="theme">
-          <span class="custom-control-indicator"></span>
-          <span class="custom-control-description">Light theme</span>
-        </label>
-        <label class="custom-control custom-checkbox">
-          <input class="custom-control-input" name="radio-stacked" type="radio" value="dark" [(ngModel)]="theme">
-          <span class="custom-control-indicator"></span>
-          <span class="custom-control-description">Dark theme</span>
-        </label>
-      </div>
-
-      <small class="ff-headers text-uppercase mb-3"><strong>Select A Language</strong></small>
-      <div class="d-flex align-items-center">
-        <select class="custom-select" [(ngModel)]="currentLang" #langSelect="ngModel" (ngModelChange)="translate.use(currentLang)" placeholder="Select language" style="min-width: 50%;">
-          <option *ngFor="let lang of translate.getLangs()" [value]="lang">{{ lang }}</option>
-        </select>
-      </div>
-    </div>
-  </div>
-</div>

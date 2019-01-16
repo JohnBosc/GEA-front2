@@ -6,13 +6,11 @@ import { SignupComponent } from './signup.component';
 
 export const SignupRoutes: Routes = [
   {
-    path: '',
-    children: [{
       path: 'signup',
       component: SignupComponent,
       data: {
         heading: 'Signup'
       }
-    }]
+
   }
 ];

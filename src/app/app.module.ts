@@ -15,8 +15,12 @@ import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
-import { SharedModule } from './shared/shared.module';
+import { EmployeeComponent } from './employee/employee.component';
+import { LayoutComponent } from './employee/layout/layout.component';
 
+import { SharedModule } from './shared/shared.module';
+import {MouvmentComponent} from "./mouvment/mouvment.component";
+import {StockageComponent} from "./stockage/stockage.component";
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -27,13 +31,17 @@ export function createTranslateLoader(http: HttpClient) {
   declarations: [
     AppComponent,
     AdminLayoutComponent,
-    AuthLayoutComponent
+    AuthLayoutComponent,
+    EmployeeComponent,
+    MouvmentComponent,
+    StockageComponent,
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     SharedModule,
-    RouterModule.forRoot(AppRoutes),
+    RouterModule.forRoot(AppRoutes, {useHash: true}),
     FormsModule,
     HttpClientModule,
     TranslateModule.forRoot({

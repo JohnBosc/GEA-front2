@@ -26,13 +26,10 @@ export class AdminLayoutComponent implements OnInit, OnDestroy, AfterViewInit {
   private _router: Subscription;
   private mediaMatcher: MediaQueryList = matchMedia(`(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`);
 
-  currentLang = 'en';
   options: Options;
   theme = 'light';
-  showSettings = false;
-  isDocked = false;
   isBoxed = false;
-  isOpened = true;
+  isOpened = false;
   mode = 'push';
   _mode = this.mode;
   _autoCollapseWidth = 991;
@@ -96,7 +93,7 @@ export class AdminLayoutComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   setTitle( newTitle: string) {
-    this.titleService.setTitle( 'Decima -  | ' + newTitle );
+    this.titleService.setTitle( 'Archives -  | ' + newTitle );
   }
 
   toogleSidebar(): void {
@@ -111,16 +108,5 @@ export class AdminLayoutComponent implements OnInit, OnDestroy, AfterViewInit {
     this.modalService.open(search, { windowClass: 'search', backdrop: false });
   }
 
-  addMenuItem(): void {
-    this.menuItems.add({
-      state: 'menu',
-      name: 'MENU',
-      type: 'sub',
-      icon: 'basic-webpage-txt',
-      children: [
-        {state: 'menu', name: 'MENU'},
-        {state: 'menu', name: 'MENU'}
-      ]
-    });
-  }
+
 }

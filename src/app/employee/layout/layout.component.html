@@ -1,0 +1,53 @@
+<style type="text/css">
+	div.container-fluid, div.container{
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+	a.nav-item, div.nav-item{
+		width: 16.66%!important; text-align: center!important;
+		vertical-align: middle!important;
+
+	}
+	a.active{
+		background: #065A8F!important;
+		color: #ffffff!important;
+	}
+	i.material-icons{
+		vertical-align: middle!important;
+	}
+  input, select{
+    border-radius: 0px!important;
+    border-top: 0px !important;
+    border-right: 0px !important;
+    border-left: 0px !important;
+    background: transparent!important;
+  }
+</style>
+
+<div class="container-fluid bg-white">
+		<!--subMenu-->
+		<nav class="navbar navbar-expand-lg navbar-light" style="background: #FFFFFF; padding: 0 20px; border-bottom: 1px solid #ccc;">
+			  <span class="navbar-brand" style="cursor: default; font-weight: normal;" href="#"><i class="widget-icon icon icon-basic-gear"></i> Utilisateurs et autres</span>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			    <div class="navbar-nav" style="width: 100%;">
+            <ul class="nav" style="width: 100%!important;">
+                      <li class="nav-item" style="width: 25%!important; text-align: center;">
+                        <a class="nav-link active" routerLink="/">Liste des utilisateurs</a>
+                      </li>
+                      <li class="nav-item" style="width: 25%!important; text-align: center;">
+                        <a class="nav-link" routerLink="/create" >Nouvel utilisateur</a>
+                      </li>
+                      <li class="nav-item" style="width: 25%!important; text-align: center;">
+                        <a class="nav-link" routerLink="/profile">Profil utilisateur</a>
+                      </li>
+                      <li class="nav-item" style="width: 25%!important; text-align: center;">
+                        <a class="nav-link" href="#">Autres</a>
+                      </li>
+          </ul>
+			    </div>
+			  </div>
+		</nav>
+</div>

@@ -1,17 +1,16 @@
-<base href="/src/app/">
 <style type="text/css">
 	div.container-fluid, div.container{
 		margin: 0 !important;
 		padding: 0 !important;
 	}
-	a.nav-item, div.nav-item{
-		width: 16.66%!important; text-align: center!important;
+	a.nav-link, div.nav-item{
+    text-align: center!important;
 		vertical-align: middle!important;
-
+    font-weight: 900!important;
 	}
 	a.active{
-		background: #065A8F!important;
-		color: #ffffff!important;
+		border-bottom: 2px solid #065A8F!important;
+		color: #000000!important;
 	}
 	i.material-icons{
 		vertical-align: middle!important;
@@ -36,21 +35,27 @@
 			    <div class="navbar-nav" style="width: 100%;">
             <ul class="nav" style="width: 100%!important;">
                       <li class="nav-item" style="width: 25%!important; text-align: center;">
-                        <a class="nav-link active" routerLink="list">Liste des utilisateurs</a>
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['employee/list']">Liste des utilisateurs</a>
                       </li>
                       <li class="nav-item" style="width: 25%!important; text-align: center;">
-                        <a class="nav-link" routerLink="create" >Nouvel utilisateur</a>
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['employee/create']" >Nouvel utilisateur</a>
                       </li>
                       <li class="nav-item" style="width: 25%!important; text-align: center;">
-                        <a class="nav-link" routerLink="profile">Profil utilisateur</a>
+                        <a class="nav-link" routerLinkActive="active" [routerLink]="['employee/profile']">Profil utilisateur</a>
                       </li>
-                      <li class="nav-item" style="width: 25%!important; text-align: center;">
-                        <a class="nav-link" href="#">Autres</a>
+                      <li class="nav-item" routerLinkActive="" style="width: 25%!important; text-align: center;">
+                        <a class="nav-link" href="#">Autres configurations</a>
                       </li>
           </ul>
 			    </div>
 			  </div>
 		</nav>
 
+  <div class="container-fluid bg-white" style="padding: 20px!important; margin-top: 10px!important;">
+    <router-outlet></router-outlet>
+  </div>
+
+
 </div>
-<router-outlet name="subEmployeeMenu"></router-outlet>
+
+

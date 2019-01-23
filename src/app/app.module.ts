@@ -16,11 +16,14 @@ import { AppComponent } from './app.component';
 import { AdminLayoutComponent } from './layouts/admin/admin-layout.component';
 import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { EmployeeListComponent } from './employee/employeeList/employeeList.component';
+import { EmployeeCreateComponent } from './employee/employeeCreate/employeeCreate.component';
+import { EmployeeProfileComponent } from './employee/employeeProfile/employeeProfile.component';
 import { LayoutComponent } from './employee/layout/layout.component';
 
 import { SharedModule } from './shared/shared.module';
-import {MouvmentComponent} from "./mouvment/mouvment.component";
-import {StockageComponent} from "./stockage/stockage.component";
+import {MouvmentComponent} from './mouvment/mouvment.component';
+import {StockageComponent} from './stockage/stockage.component';
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -33,6 +36,9 @@ export function createTranslateLoader(http: HttpClient) {
     AdminLayoutComponent,
     AuthLayoutComponent,
     EmployeeComponent,
+    EmployeeListComponent,
+    EmployeeCreateComponent,
+    EmployeeProfileComponent,
     MouvmentComponent,
     StockageComponent,
     LayoutComponent,

@@ -1,5 +1,5 @@
 <div class="bg-white d-flex align-items-stretch min-height-100 h-100">
-  <div class="d-none d-md-inline-flex col-md-4 col-lg-4"></div>
+  <div class="d-none d-md-inline-flex col-md-4ng col-lg-4"></div>
   <div class="card card-body mb-0 rounded-0 p-5 col-sm-12 col-md-4 col-lg-4">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="mb-3">
@@ -9,7 +9,7 @@
           </span></p>
           <p style="text-align: center;"><span style="font-family: 'Segoe UI'; font-weight: bold;">GESTION ELECTRONIQUE DES ARCHIVES</span></p>
       </div>
-      <div style="background: #D4E0EA; padding: 30px 50px;">
+      <div style="background-image: linear-gradient(#ececec 1%, #ececec, #267CB5 )!important; padding: 30px 50px;">
       <fieldset class="form-group" [ngClass]="{'has-danger': form.controls['uname'].hasError('required') && form.controls['uname'].touched}">
         <label for="username" class="form-control-label" style="font-weight: bold; color:#707070;">
           Identifiant
@@ -26,7 +26,7 @@
         <a [routerLink]="['/forgot']" class="form-text"><small>(Mot de passe oublié?)</small></a>
       </fieldset>
       <div class="block"></div>
-      <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Connexion</button>
+      <button class="btn" style="border-radius: 0!important;" type="submit" [disabled]="!form.valid">Connexion</button>
       </div>
     </form>
   </div>

@@ -1,13 +1,15 @@
 <style type="text/css">
 	a.nav-link{
     text-align: center!important;
-		vertical-align: middle!important;
+    vertical-align: middle!important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif!important;
+    font-size: 16px!important;
 	}
 	.active{
 		background: #065A8F!important;
     background-image: linear-gradient(#065A8F, #cccccc 1%, #065A8F)!important;
 	}
-	i.widget-icon{
+	i.material-icons{
 		vertical-align: middle!important;
 	}
   input, select {
@@ -15,7 +17,6 @@
     border-radius:0!important;
     background: transparent!important;
   }
-
 </style>
 <ng-sidebar-container class="app" [ngClass]="{'mode-boxed': isBoxed, 'sidebar-opened': isOpened, 'theme-light': theme == 'light', 'theme-dark': theme == 'dark', 'mode-push': _mode == 'push', 'mode-dock': _mode == 'dock', 'mode-over': _mode == 'over', 'mode-slide': _mode == 'slide', 'no-footer': options?.removeFooter, 'map-header': options?.mapHeader}">
   <ng-sidebar
@@ -118,7 +119,7 @@
       <nav class="navbar custom-navbar navbar-light main-footer small">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="http://www.minpostel.gov.cm">
+            <a class="nav-link" href="http://www.minpostel.gov.cm" style="font-size: 12px!important;">
                     <span class="ff-headers text-uppercase">MINPOSTEL - </span> Tous les droits reservés
             </a>
           </li>
@@ -138,36 +139,34 @@
       <ul class="navbar-nav">
         <li class="nav-item">
           <a href="javascript:;" class="nav-link" (click)="toogleSidebar()">
-            <i _ngcontent-c5 class="hamburger-icon v2">
-                <span></span>
-            </i>
+              <i class="material-icons" style="vertical-align: middle!important; color: #ffffff;">notes</i>
           </a>
         </li>
       </ul>
       <ul class="navbar-nav" style="text-align: center;">
         <li class="nav-item" routerLinkActive="active">
           <a class="nav-link text-white" routerLink="/dashboard">
-            <i class="widget-icon icon icon-arrows-squares"></i>  Accueil
+            <i class="material-icons">insert_chart</i> Statistiques
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" routerLinkActive="active" routerLink="/employee">
-            <i class="widget-icon icon icon-basic-gear"></i> Utilisateurs
+            <i class="material-icons">group</i> Utilisateurs
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" routerLinkActive="active" routerLink="/docs">
-            <i class="widget-icon icon icon-basic-sheet-txt"></i> Documents
+            <i class="material-icons">description</i> Gestion-Doc
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" routerLinkActive="active" routerLink="/mouvment">
-            <i class="widget-icon icon icon-arrows-switch-horizontal"></i> Mouvements
+            <i class="material-icons">swap_horiz</i> Mouvements
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link text-white" routerLinkActive="active" routerLink="/stockage">
-            <i class="widget-icon icon icon-basic-server2"></i> Stockage
+            <i class="material-icons">storage</i> Emplacements
           </a>
         </li>
         <li class="nav-item" style="padding: 0 20px!important;">
@@ -176,13 +175,13 @@
 
         <li class="nav-item">
           <a class="nav-link text-white" href="#">
-            <i class="widget-icon icon icon-basic-mail"></i>
+            <i class="material-icons">announcement</i>
           </a>
         </li>
         <!--nav-bar user connected-->
         <li class="nav-item" ngbDropdown placement="bottom-right" style="margin-right: 15px!important;">
           <a href="javascript:;" class="nav-link" ngbDropdownToggle>
-            <img src="assets/images/avatar.jpg" class="navbar-avatar rounded-circle" alt="user" title="user">
+              <i class="material-icons" style="color: #ffffff;">person_pin</i>
           </a>
           <div ngbDropdownMenu class="dropdown-menu dropdown-menu-right">
             <a class="dropdown-item" href="javascript:;">
@@ -207,7 +206,7 @@
       <nav class="navbar custom-navbar navbar-light main-footer small">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="javascript:;">
+            <a class="nav-link" href="javascript:;" style="font-size: 10px!important;">
               <span>Design By Jean Bosco Mengue</span>
             </a>
           </li>

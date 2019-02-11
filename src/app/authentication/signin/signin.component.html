@@ -7,19 +7,19 @@
           <span style="font-size: 9px;">
             MINISTERE DES POSTES ET TELECOMMUNICATIONS
           </span></p>
-          <p style="text-align: center;"><span style="font-family: 'Segoe UI'; font-weight: bold;">GESTION ELECTRONIQUE DES ARCHIVES</span></p>
+          <h3 style="text-align: center;"><span style="font-family: 'Segoe UI'; font-weight: bold; text-align: justify;">Gestion Electronique Des Archives</span></h3>
       </div>
-      <div style="background-image: linear-gradient(#ececec 1%, #ececec, #267CB5 )!important; padding: 30px 50px;">
+      <div style="background-image: linear-gradient(#ececec 1%, #ececec, #267CB5 )!important; padding: 30px 50px; border: 1px solid #cccccc; border-radius: 5px;">
       <fieldset class="form-group" [ngClass]="{'has-danger': form.controls['uname'].hasError('required') && form.controls['uname'].touched}">
         <label for="username" class="form-control-label" style="font-weight: bold; color:#707070;">
-          Identifiant
+          <i class="material-icons" style="vertical-align: middle!important;">person</i> Identifiant
         </label>
         <input type="text" class="form-control" placeholder="" [formControl]="form.controls['uname']" [ngClass]="{'form-control-danger': form.controls['uname'].hasError('required') && form.controls['uname'].touched}"/>
         <div class="form-control-feedback" *ngIf="form.controls['uname'].hasError('required') && form.controls['uname'].touched" style="color:red;"><i>Identifiant requis</i></div>
       </fieldset>
       <fieldset class="form-group" [ngClass]="{'has-danger': form.controls['password'].hasError('required') && form.controls['password'].touched}">
         <label for="password" class="form-control-label" style="font-weight: bold; color:#707070;">
-          Mot de passe
+          <i class="material-icons" style="vertical-align: middle!important;">lock</i> Mot de passe
         </label>
         <input type="password" class="form-control" placeholder="" [formControl]="form.controls['password']" [ngClass]="{'form-control-danger': form.controls['password'].hasError('required') && form.controls['password'].touched}"/>
         <div class="form-control-feedback" *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched" style="color:red;"><i>Mot de passe requis</i></div>

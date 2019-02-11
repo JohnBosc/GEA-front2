@@ -10,6 +10,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SidebarModule } from 'ng-sidebar';
 import { AgmCoreModule } from '@agm/core';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
 import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
@@ -46,6 +47,7 @@ export function createTranslateLoader(http: HttpClient) {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    MatButtonModule, MatCheckboxModule,
     SharedModule,
     RouterModule.forRoot(AppRoutes, {useHash: true}),
     FormsModule,

@@ -20,6 +20,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeListComponent } from './employee/employeeList/employeeList.component';
 import { EmployeeCreateComponent } from './employee/employeeCreate/employeeCreate.component';
 import { EmployeeProfileComponent } from './employee/employeeProfile/employeeProfile.component';
+import { FileExplorerComponent } from './file_explorer/file_explorer.component';
 import { LayoutComponent } from './employee/layout/layout.component';
 
 import { SharedModule } from './shared/shared.module';
@@ -37,6 +38,7 @@ export function createTranslateLoader(http: HttpClient) {
     AdminLayoutComponent,
     AuthLayoutComponent,
     EmployeeComponent,
+    FileExplorerComponent,
     EmployeeListComponent,
     EmployeeCreateComponent,
     EmployeeProfileComponent,

@@ -1,32 +1,49 @@
+<style>
+ input[type=text], input[type=password]{
+  font-size: 16px!important;
+  height: 40px!important;
+ }
+</style>
 <div class="bg-white d-flex align-items-stretch min-height-100 h-100">
   <div class="d-none d-md-inline-flex col-md-4ng col-lg-4"></div>
-  <div class="card card-body mb-0 rounded-0 p-5 col-sm-12 col-md-4 col-lg-4">
+  <div class="card card-body mb-3 rounded-0 p-5 col-sm-12 col-md-4 col-lg-4">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="mb-3">
         <p style="text-align: center;"><img src="assets/images/ico.png" class="avatar-lg mb-1" alt="Minpostel icon"><br>
           <span style="font-size: 9px;">
             MINISTERE DES POSTES ET TELECOMMUNICATIONS
           </span></p>
-          <h3 style="text-align: center;"><span style="font-family: 'Segoe UI'; font-weight: bold; text-align: justify;">Gestion Electronique Des Archives</span></h3>
+          <h4 style="text-align: center;"><span style="font-family: 'Segoe UI'; font-weight: bold; text-align: justify;">Gestion Electronique Des Archives</span></h4>
       </div>
-      <div style="background-image: linear-gradient(#ececec 1%, #ececec, #267CB5 )!important; padding: 30px 50px; border: 1px solid #cccccc; border-radius: 5px;">
-      <fieldset class="form-group" [ngClass]="{'has-danger': form.controls['uname'].hasError('required') && form.controls['uname'].touched}">
-        <label for="username" class="form-control-label" style="font-weight: bold; color:#707070;">
-          <i class="material-icons" style="vertical-align: middle!important;">person</i> Identifiant
-        </label>
-        <input type="text" class="form-control" placeholder="" [formControl]="form.controls['uname']" [ngClass]="{'form-control-danger': form.controls['uname'].hasError('required') && form.controls['uname'].touched}"/>
+      <div style="background-image: linear-gradient(#ececec 1%, #ececec, #267CB5 )!important; padding: 20px 50px; border: 1px solid #cccccc; border-radius: 5px;">
+
+        <fieldset class="form-group" [ngClass]="{'has-danger': form.controls['uname'].hasError('required') && form.controls['uname'].touched}">
+            <label for="username" class="form-control-label" style="font-weight: bold; color:#707070;">
+                Identifiant
+              </label>
+          <div class="input-group mb-3">
+        <div class="input-group-prepend" style="border: 1px solid #cccccc; border-right: 0; border-top-left-radius: 5px; padding-left: 5px; padding-right: 5px; padding-top: 5px; border-bottom-left-radius: 5px; color:#707070; background: #ffffff">
+            <span class="input-group-text" id="basic-addon1" style="vertical-align: middle!important;"><i class="material-icons" style="vertical-align: middle!important;">person</i></span>
+        </div>
+        <input type="text" class="form-control" placeholder="" aria-label="Default" [formControl]="form.controls['uname']" [ngClass]="{'form-control-danger': form.controls['uname'].hasError('required') && form.controls['uname'].touched}"/>
+      </div>
         <div class="form-control-feedback" *ngIf="form.controls['uname'].hasError('required') && form.controls['uname'].touched" style="color:red;"><i>Identifiant requis</i></div>
       </fieldset>
-      <fieldset class="form-group" [ngClass]="{'has-danger': form.controls['password'].hasError('required') && form.controls['password'].touched}">
-        <label for="password" class="form-control-label" style="font-weight: bold; color:#707070;">
-          <i class="material-icons" style="vertical-align: middle!important;">lock</i> Mot de passe
+      <label for="password" class="form-control-label" style="font-weight: bold; color:#707070;">
+          Mot de passe
         </label>
-        <input type="password" class="form-control" placeholder="" [formControl]="form.controls['password']" [ngClass]="{'form-control-danger': form.controls['password'].hasError('required') && form.controls['password'].touched}"/>
+      <fieldset class="form-group" [ngClass]="{'has-danger': form.controls['password'].hasError('required') && form.controls['password'].touched}">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend" style="border: 1px solid #cccccc; border-right: 0; background: #ffffff; padding-right: 5px; padding-left: 5px; padding-top: 5px; border-top-left-radius: 5px; border-bottom-left-radius: 5px; color:#707070;">
+                <span class="input-group-text" id="basic-addon1" style="vertical-align: middle!important;"><i class="material-icons" style="vertical-align: middle!important;">lock</i></span>
+            </div>
+        <input type="password" class="form-control" placeholder="" aria-label="Default" [formControl]="form.controls['password']" [ngClass]="{'form-control-danger': form.controls['password'].hasError('required') && form.controls['password'].touched}"/>
+        </div>
         <div class="form-control-feedback" *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched" style="color:red;"><i>Mot de passe requis</i></div>
         <a [routerLink]="['/forgot']" class="form-text"><small>(Mot de passe oublié?)</small></a>
       </fieldset>
       <div class="block"></div>
-      <button class="btn" style="border-radius: 0!important;" type="submit" [disabled]="!form.valid">Connexion</button>
+      <button style="border-radius: 0!important; padding: 5px 15px; font-weight: bold;" type="submit" [disabled]="!form.valid">Connexion</button>
       </div>
     </form>
   </div>

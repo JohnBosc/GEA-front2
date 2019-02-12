@@ -4,12 +4,12 @@ import { AuthLayoutComponent } from './layouts/auth/auth-layout.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { MouvmentComponent } from './mouvment/mouvment.component';
 import { StockageComponent } from './stockage/stockage.component';
-
-import { LayoutComponent } from './employee/layout/layout.component';
+import { FileExplorerComponent } from './file_explorer/file_explorer.component';
 
 import { EmployeeListComponent } from './employee/employeeList/employeeList.component';
 import { EmployeeCreateComponent } from './employee/employeeCreate/employeeCreate.component';
 import { EmployeeProfileComponent } from './employee/employeeProfile/employeeProfile.component';
+import { from } from 'rxjs/observable/from';
 
 export const AppRoutes: Routes = [{
   path: '',
@@ -48,8 +48,7 @@ export const AppRoutes: Routes = [{
                                 }, {
                                   path: 'stockage', component: StockageComponent
                                 }, {
-                                     path: 'docs',
-                                    loadChildren: './docs/docs.module#DocsModule'
+                                     path: 'explorer', component: FileExplorerComponent
                                   }
                             ]
           }
